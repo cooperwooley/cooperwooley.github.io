@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="script.js" defer></script>
+
+    <title>Cooper Wooley</title>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Cooper Wooley</a>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class=nav-link>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+        <div class="contents">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="content-wrapper">
+                <p>Your introduction here...</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="content-wrapper">
+                <div class="carousel">
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <li class="carousel-slide">
+                                <a href="https://github.com/your-repo" target="_blank">
+                                    <img src="project1.png" alt="Project 1">
+                                    <div class="carousel-caption">Project 1</div>
+                                </a>
+                            </li>
+                            <li class="carousel-slide">
+                                <a href="https://github.com/your-repo" target="_blank">
+                                    <img src="project2.png" alt="Project 2">
+                                    <div class="carousel-caption">Project 2</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="carousel-button prev">←</button>
+                    <button class="carousel-button next">→</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

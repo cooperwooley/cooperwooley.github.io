@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #e9f0f7;
+    height: 5000px;
+    padding-top: 60px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 20px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+section > h2 {
+    margin-top: 0;
+    padding-top: 20px
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%
+}
+
+.header {
+    background-color: #008f5d;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    min-height: 60px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 23px;
+    letter-spacing: -1.5px;
+    font-weight: 500;
+}
+
+.nav {
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-list {
+    display: flex;
+    column-gap: 40px
+}
+
+.nav-item {
+
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    transition: all 0.4s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: rgba(255, 255, 255, 1);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    height: 2px;
+    width: 27px;
+    background: #fff;
+    margin: 5px 0;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav--open {
+    transform: translate(0) !important;
+}
+
+.hamburger--open .bar:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger--open .bar:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger--open .bar:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 650px) {
+    .nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        background-color: #008f5d;
+        width: 100%;
+        padding: 10px 0 25px;
+        transform: translateX(-100%);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.carousel{
+
+}
+ 
