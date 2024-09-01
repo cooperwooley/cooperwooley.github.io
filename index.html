@@ -55,24 +55,44 @@
             <h2>Projects</h2>
             <div class="content-wrapper">
                 <div class="carousel">
-                    <div class="carousel-track-container">
-                        <ul class="carousel-track">
-                            <li class="carousel-slide">
-                                <a href="https://github.com/your-repo" target="_blank">
-                                    <img src="project1.png" alt="Project 1">
-                                    <div class="carousel-caption">Project 1</div>
-                                </a>
-                            </li>
-                            <li class="carousel-slide">
-                                <a href="https://github.com/your-repo" target="_blank">
-                                    <img src="project2.png" alt="Project 2">
-                                    <div class="carousel-caption">Project 2</div>
-                                </a>
-                            </li>
-                        </ul>
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide">
+                        <a href="https://github.com/your-repo" target="_blank">
+                            <img id="proj-img1" src="images/wsc.jpg" alt="Project 1">
+                            <div class="overlay"></div>
+                        </a>
+                        <div class="carousel-text">
+                            <h3>Project 1</h3>
+                            <p>Description of Project 1...</p>
+                            <ul>
+                                <li>Language/Skill/Concept 1...</li>
+                                <li>Language/Skill/Concept 2...</li>
+                            </ul>
+                        </div>
                     </div>
-                    <button class="carousel-button prev">←</button>
-                    <button class="carousel-button next">→</button>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <a href="https://github.com/your-repo" target="_blank">
+                            <img src="#" alt="Project 2">
+                            <div class="carousel-text">
+                                <h3>Project 2</h3>
+                                <p>Description of Project 2...</p>
+                                <ul>
+                                    <li>Language/Skill/Concept 1...</li>
+                                    <li>Language/Skill/Concept 2...</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+
+                    <button class="carousel-arrow prev">←</button>
+                    <button class="carousel-arrow next">→</button>
+
+                    <div class="carousel-dots">
+                        <span class="dot" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                    </div>
                 </div>
             </div>
         </section>

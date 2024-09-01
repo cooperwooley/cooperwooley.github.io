@@ -26,30 +26,42 @@ navLinks.forEach(link => {
     });
 });
 
-// Carousel functionality
-const track = dcoument.querySelector(".carousel-track");
-const slides = Array.from(track.children);
-const nextButton = dcoument.querySelector(".carousel-button.next");
-const prevButton = document.querySelector(".carousel-button.prev");
+// Project carousel
+const slides = document.querySelectorAll(".carousel-slide");
+const dots = document.querySelectorAll(".dot");
+const prevButton = document.querySelector(".carousel-arrow.prev");
+const nextButton = document.querySelector(".carousel-arrow.next");
+let currentSlide = 0;
 
-let currentIndex = 0;
+function showSlide(index) { 
+    slides[currentSlide].style.left = "100%";
+    slides[index].style.next = "0%";
 
-function updateSlidePosition() {
-    track.style.transform = "translateX(-${currentIndex * 100}%";
+    dots[currentSlide].classList.remove("active");
+    dots[index].classList.add("active");
+
+    currentSlide = index;
 }
 
-nextButton.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlidePosition();
+function nextSlide() {
+    let nextIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextIndex);
+}
+
+function prevSlide() {
+    let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
+}
+
+showSlide(0);
+
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        showSlide(index);
+    });
 });
 
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateSlidePosition();
-});
+nextButton.addEventListener("click", nextSlide);
+prevButton.addEventListener("click", prevSlide);
 
-// Automatic sliding
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlidePosition();
-}, 5000);
+setInterval(nextSlide, 5000);
