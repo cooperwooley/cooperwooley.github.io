@@ -46,53 +46,60 @@
         <div class="contents">
         <section id="about">
             <h2>About Me</h2>
-            <div class="content-wrapper">
-                <p>Your introduction here...</p>
-            </div>
+            <p>Your introduction here...</p>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
-            <div class="content-wrapper">
-                <div class="carousel">
-                    <!-- Slide 1 -->
-                    <div class="carousel-slide">
-                        <a href="https://github.com/your-repo" target="_blank">
-                            <img id="proj-img1" src="images/wsc.jpg" alt="Project 1">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="carousel-text">
-                            <h3>Project 1</h3>
-                            <p>Description of Project 1...</p>
+            <div class="slideshow-container">
+                <!-- Project 1 -->
+                <div class="slide fade">
+                    <div class="numbertext">1 / 2</div>
+                    <a class="linkbutton" href="https://github.com/NotExift/10mansbot" target="_blank">View Project</a>
+                    <div class="materials">
+                        <img src="../images/logo.jpg" style="max-width: 60%">
+                        <div class="material-text">
+                            <h3>CS2 Workshop Map Queue Discord Bot</h3>
+                            <p>A Discord bot designed to queue 10 players into CS2 workshop map games, with automated team selection, 
+                                map vetoes, and server management. This bot is optimized for a seamless experience in organizing and 
+                                managing custom games.</p>
+                            <h4>Utilizes:</h4>
                             <ul>
-                                <li>Language/Skill/Concept 1...</li>
-                                <li>Language/Skill/Concept 2...</li>
+                                <img src="../images/python.svg">
+                                <img src="../images/discord.svg">
+                                <img src="../images/html5.svg">
+                                <img src="../images/docker.svg">
                             </ul>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Slide 2 -->
-                    <div class="carousel-slide">
-                        <a href="https://github.com/your-repo" target="_blank">
-                            <img src="#" alt="Project 2">
-                            <div class="carousel-text">
-                                <h3>Project 2</h3>
-                                <p>Description of Project 2...</p>
-                                <ul>
-                                    <li>Language/Skill/Concept 1...</li>
-                                    <li>Language/Skill/Concept 2...</li>
-                                </ul>
-                            </div>
-                        </a>
+                <!-- Project 2 -->
+                <div class="slide fade">
+                    <div class="numbertext">2 / 2</div>
+                    <div class="materials">
+                        <img src="../images/under-construction.jpg">
+                        <div class="material-text">
+                            <h3>More Projects to Come</h3>
+                            <p>This site is still under construction. More projects will be added
+                                in the near future.
+                            </p>
+                            <h4>Utilizes:</h4>
+                            <ul>
+                                <img src="../images/html5.svg">
+                                <img src="../images/css3.svg">
+                                <img src="../images/javascript.svg">
+                            </ul>
+                        </div>
                     </div>
+                </div>
 
-                    <button class="carousel-arrow prev">←</button>
-                    <button class="carousel-arrow next">→</button>
+                <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                <a class="next" onclick="plusSlides(1)">&#10095</a>
 
-                    <div class="carousel-dots">
-                        <span class="dot" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                    </div>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
                 </div>
             </div>
         </section>

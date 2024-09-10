@@ -36,14 +36,7 @@ section > h2 {
     padding-top: 20px
 }
 
-.content-wrapper {
-    flex: 1;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    width: 100%
-}
-
+/* Nav-bar */
 .header {
     background-color: #008f5d;
     position: fixed;
@@ -147,100 +140,99 @@ section > h2 {
     }
 }
 
-.carousel{
+.slideshow-container {
+    max-width: 1000px;
     position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.carousel-slide {
+    margin: auto;
     display: flex;
-    align-items: center;
+}
+
+.slide {
+    display: none;
+}
+
+.materials {
     width: 100%;
-    height: 100vh;
-    transition: tranform 0.5s ease-in-out;
+    display: flex;
 }
 
-.carousel-slide a {
-    position: relative;
+.materials img {
+    max-width: 60%;
 }
 
-.carousel-slide img {
-    width: 60%;
-    max-height: 100%;
-    object-fit: cover;
-}
-
-#proj-img1 {
-   width: 400px;
-   height: 400px;
-   overflow: hidden;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.carousel-slide a:hover .overlay {
-    opacity: 1;
-}
-
-.carousel-text {
+.material-text {
     width: 40%;
-    padding: 20px;
-    color: rgba(0, 0, 0, .75);
+    padding: 4px;
+    color: rgba(0,0,0,0.75);
     background-color: #fff;
     box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
+    display:flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
-    word-wrap: break-word;
 }
 
-.carousel-slide.active {
-    transform: translateX(0);
+.material-text h3,h4 {
+    margin: 8px;
 }
 
-.carousel-text p, .carousel-text ul {
-    max-width: 100%;
-    word-wrap: break-word;
+.material-text ul img {
+    max-width: 15%;
+    padding: 4px;
+    filter: invert(33%) sepia(24%) saturate(5066%) hue-rotate(139deg) 
+    brightness(94%) contrast(101%);
 }
 
-.carousel-arrow {
+.prev, .next {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #fff;
-    color: rgba(0, 0, 0, 0.75);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #bbb;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
     z-index: 10;
 }
 
-.carousel-arrow:hover {
-    background-color: rgba(255, 255, 255, 0.75)
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-.carousel-arrow.prev {
-    left: 10px;
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
-.carousel-arrow.next {
-    right: 10px;
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
 }
 
-.carousel-dots {
+.linkbutton {
+    cursor: pointer;
+    color: #008f5d;
+    background-color: #fff;
+    padding: 12px 20px;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    box-sizing: border-box;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.linkbutton:hover {
+    background-color: #ccc
+}
+
+.dots {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -249,19 +241,26 @@ section > h2 {
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease-in-out;
 }
 
-.dot:hover {
-    background-color: #78d6b5;
+.active, .dot:hover {
+    background-color: #008f5d
 }
 
-.dot.active {
-    background-color: #008f5d; 
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
- 
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}

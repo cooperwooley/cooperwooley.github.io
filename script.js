@@ -17,7 +17,7 @@ const navLinks = document.querySelectorAll('a[href^="#"]');
 
 navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
-        if (link.getAttribute("href").startsWith("#")) {
+        if (link.getAttribute("href").startsWith("#") || link.getAttribute("href".startsWith("index"))) {
             e.preventDefault();
             const targetId = link.getAttribute("href");
             const targetSection = document.querySelector(targetId);
@@ -27,41 +27,58 @@ navLinks.forEach(link => {
 });
 
 // Project carousel
-const slides = document.querySelectorAll(".carousel-slide");
-const dots = document.querySelectorAll(".dot");
-const prevButton = document.querySelector(".carousel-arrow.prev");
-const nextButton = document.querySelector(".carousel-arrow.next");
-let currentSlide = 0;
+let slideIndex = 1;
+let autoSlideTimeout;
 
-function showSlide(index) { 
-    slides[currentSlide].style.left = "100%";
-    slides[index].style.next = "0%";
-
-    dots[currentSlide].classList.remove("active");
-    dots[index].classList.add("active");
-
-    currentSlide = index;
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+    resetAutoSlide();
 }
 
-function nextSlide() {
-    let nextIndex = (currentSlide + 1) % slides.length;
-    showSlide(nextIndex);
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+    resetAutoSlide();
 }
 
-function prevSlide() {
-    let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(prevIndex);
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+
+    resetAutoSlide();
 }
 
-showSlide(0);
+function autoSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    
+    resetAutoSlide();
+}
 
-dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        showSlide(index);
-    });
-});
+function resetAutoSlide() {
+    clearTimeout(autoSlideTimeout);
+    autoSlideTimeout = setTimeout(autoSlides, 7000);
+}
 
-nextButton.addEventListener("click", nextSlide);
-prevButton.addEventListener("click", prevSlide);
-
-setInterval(nextSlide, 5000);
+showSlides(1);
