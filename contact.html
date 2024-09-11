@@ -30,8 +30,12 @@
                         <a href="index.html#projects" class="nav-link">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="#" class=nav-link>Contact</a>
                     </li>
+                    <li class="nav-item"><ul class="connections">
+                        <li><a href="https://github.com/cooperwooley" target="_blank"><img src="../images/github.svg"></a></li>
+                        <li><a href="https://linkedin.com/in/cooperwooley" target="blank"><img src="../images/linkedin.svg"></a></li>
+                    </ul></li>
                 </ul>
             </nav>
 
@@ -45,19 +49,24 @@
 
     <div class="contents">
         <section id="contact-info">
-            <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:coopermw03@gmail.com">coopermw03@gmail.com</a></p>
+            <div class="contact-description">
+                <h1>Contact Me</h1>
+                <h3>Have any questions? Fill out the form.</h3>
+                <p>Feel free to inquire about anything. I will respond as soon as possible!</p>
+                <p style="text-decoration: underline"><a href="mailto:coopermw03@gmail.com">coopermw03@gmail.com</a></p>
+            </div>
 
-            <h2>Get in Touch</h2>
-            <form action="mailto:coopermw03@gmail.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" required></textarea><br><br>
-                <input type="submit" value="Send">
-            </form>
+            <div class="get-in-touch">
+                <form action="mailto:coopermw03@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name <span class="required">(required)</span></label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">Email <span class="required">(required)</span></label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="message">Message <span class="required">(required)</span></label><br>
+                    <textarea id="message" name="message" required></textarea><br><br>
+                    <input class="send" type="submit" value="Send">
+                </form>
+            </div>
         </section>
     </div>
 </body>
