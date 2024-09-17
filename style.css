@@ -169,6 +169,35 @@ section > h2 {
     .hamburger {
         display: block;
     }
+
+    .materials {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+    
+    .material-text {
+        width: 100%;
+    }
+
+    .materials img {
+        max-height: 250px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .linkbutton {
+        padding: 8px 12px;
+        font-size: 12px;
+        z-index: 1;
+    }
+
+    .send {
+        width: 100%;
+    }
+
 }
 
 /* Project Carousel */
@@ -177,6 +206,7 @@ section > h2 {
     position: relative;
     margin: auto;
     display: flex;
+    align-items: center;
 }
 
 .slide {
@@ -356,7 +386,7 @@ section > h2 {
 }
 
 .send {
-    max-width: 20%;
+    max-width: 30%;
     background-color: #008f5d;
     color: #fff;
     cursor: pointer;
