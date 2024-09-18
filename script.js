@@ -26,6 +26,32 @@ navLinks.forEach(link => {
     });
 });
 
+document.addEventListener("scroll", function() {
+    let tags = [
+        document.getElementById("about"),
+        document.getElementById("projects")
+    ];
+  
+    for (let i = 0; i < tags.length; i++) {
+      let tag = tags[i];
+      if (!tag) {
+        console.error("Element not found:", tags[i]); // Debugging: Ensure elements are found
+        continue;
+      }
+
+      let rect = tag.getBoundingClientRect();
+      console.log("Element:", tag.id, "Rect Top:", rect.top, "Rect Bottom:", rect.bottom);
+
+      if (rect.top <=window.innerHeight && rect.bottom >= 0) {
+        tag.classList.add("visible");
+        console.log(tag.id + " is visible");
+      } else {
+        tag.classList.remove("visible");
+        console.log(tag.id + " is not visible");
+      }
+    }
+  });
+
 // Project carousel
 let slideIndex = 1;
 let autoSlideTimeout;
