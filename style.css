@@ -145,61 +145,6 @@ section > h2 {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 650px) {
-    .nav {
-        position: fixed;
-        top: 60px;
-        left: 0;
-        background-color: #008f5d;
-        width: 100%;
-        padding: 10px 0 25px;
-        transform: translateX(-100%);
-    }
-
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-        row-gap: 20px;
-    }
-
-    .nav-link {
-        font-size: 14px;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .materials {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        position: relative;
-    }
-    
-    .material-text {
-        width: 100%;
-    }
-
-    .materials img {
-        max-height: 250px;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-
-    .linkbutton {
-        padding: 8px 12px;
-        font-size: 12px;
-        z-index: 1;
-    }
-
-    .send {
-        width: 100%;
-    }
-
-}
-
 /* Project Carousel */
 .slideshow-container {
     max-width: 1000px;
@@ -396,4 +341,88 @@ section > h2 {
 .send:hover {
     background-color: #008f5d !important;
     opacity: 75%;
+}
+
+
+/* Smaller screens (ie mobile) */
+@media (max-width: 650px) {
+    /* Nav bar */
+    .nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        background-color: #008f5d;
+        width: 100%;
+        padding: 10px 0 25px;
+        transform: translateX(-100%);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Project carousel */
+
+    #projects h2{
+        padding-bottom: 20px;
+    }
+    .materials {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        border: 2px solid rgba(0,0,0,0.2);
+        border-radius: 10px;
+    }
+    
+    .material-text {
+        width: 100%;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .material-text ul img {
+        max-width: 7%;
+        padding: 4px;
+    }
+
+    .materials img {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .linkbutton {
+        padding: 8px 12px;
+        font-size: 12px;
+        z-index: 1;
+    }
+
+    .send {
+        width: 100%;
+    }
+
+    /* Contact page */
+    #contact-info {
+        flex-direction: column;
+    }
+
+    .contact-description {
+        max-width: 100%;
+    }
+
+    .get-in-touch {
+        max-width: 100%;
+    }
 }
