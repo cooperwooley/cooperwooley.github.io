@@ -28,7 +28,6 @@ navLinks.forEach(link => {
 
 document.addEventListener("scroll", function() {
     let tags = [
-        document.getElementById("about"),
         document.getElementById("projects")
     ];
   
