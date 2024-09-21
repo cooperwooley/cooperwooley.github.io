@@ -199,11 +199,7 @@ section > h2 {
 .am-container img {
     max-width: 40%;
     border-radius: 50%;
-    border: 5px solid transparent;
-    background: linear-gradient(90deg, rgba(0,143,93,1) 60%, rgba(247,0,88,1) 100%);
-    padding: 5px;
-    background-clip: padding-box, border-box;
-    background-origin: border-box;
+    border: 5px solid #008f5d;
 }
 
 /* Project Carousel */
